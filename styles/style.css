@@ -81,7 +81,7 @@ body {
   margin: 0;
   background: #cccccc;
   font-family: 'Roboto', sans-serif;
-  min-width: 420px;
+  min-width: 530px;
 }
 .paper {
   zoom: 1;
@@ -97,30 +97,35 @@ body {
 .paper:after {
   clear: both;
 }
+.paper.en .r {
+  display: none;
+}
+.paper.ru .e {
+  display: none;
+}
 span.red {
   color: #C00;
 }
 .header {
   padding: 1rem;
-}
-.header .logo {
+  position: relative;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  cursor: pointer;
-  height: 7rem;
-  margin: 0 auto;
 }
-.header .logo .sign {
-  height: 100%;
+.header .sign {
+  height: 7rem;
+  width: 500px;
   padding-top: 2.6rem;
+  margin: 0 auto;
+  cursor: default;
   font-size: 1.5rem;
   line-height: 1.5rem;
   color: #333333;
   text-align: center;
 }
-.header .logo .sign .back {
+.header .sign .back {
   margin-top: -1.5rem;
   -webkit-transform: rotatey(-180deg);
   -moz-transform: rotatey(-180deg);
@@ -135,7 +140,7 @@ span.red {
   -o-transition: -o-transform 0.5s;
   transition: transform 0.5s;
 }
-.header .logo .sign .front {
+.header .sign .front {
   -webkit-backface-visibility: hidden;
   -moz-backface-visibility: hidden;
   -ms-backface-visibility: hidden;
@@ -144,19 +149,53 @@ span.red {
   -o-transition: -o-transform 0.5s;
   transition: transform 0.5s;
 }
-.header .logo .sign.ru .back {
+.header .sign.ru .back {
   -webkit-transform: rotatey(0deg);
   -moz-transform: rotatey(0deg);
   -ms-transform: rotatey(0deg);
   -o-transform: rotatey(0deg);
   transform: rotatey(0deg);
 }
-.header .logo .sign.ru .front {
+.header .sign.ru .front {
   -webkit-transform: rotatey(180deg);
   -moz-transform: rotatey(180deg);
   -ms-transform: rotatey(180deg);
   -o-transform: rotatey(180deg);
   transform: rotatey(180deg);
+}
+.header .lang-select {
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  font-size: 0.8em;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.header .lang-select .select {
+  display: inline-block;
+  width: 3.2em;
+  padding: 0.2em 0.5em 0.4em 0.5em;
+  text-align: center;
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.1);
+}
+.header .lang-select .selector {
+  margin-bottom: -2em;
+  height: 2em;
+  width: 3.2em;
+  background: #C00;
+}
+.header .lang-select.en .eng {
+  color: #FFF;
+}
+.header .lang-select.ru .rus {
+  color: #FFF;
+}
+.header .lang-select.ru .selector {
+  float: right;
+}
+a {
+  text-decoration: none;
 }
 .section {
   float: left;
@@ -164,8 +203,14 @@ span.red {
   padding: 1rem;
   color: #333333;
 }
+.section a {
+  color: #333333;
+}
 .section:nth-child(odd) {
   background: #333333;
+  color: #e8e8e8;
+}
+.section:nth-child(odd) a {
   color: #e8e8e8;
 }
 .section .section-header {
@@ -183,6 +228,10 @@ span.red {
   position: relative;
   overflow: hidden;
   margin: -2.3rem auto 0;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   width: 100%;
   padding-bottom: 100%;
 }
@@ -200,16 +249,6 @@ span.red {
 @media only screen and (max-width: 640px) {
   .graph-wrapper {
     font-size: 0.8em;
-  }
-}
-@media only screen and (max-width: 520px) {
-  .graph-wrapper {
-    font-size: 0.75em;
-  }
-}
-@media only screen and (max-width: 480px) {
-  .graph-wrapper {
-    font-size: 0.7em;
   }
 }
 .graph-wrapper .graph {
@@ -601,11 +640,15 @@ span.red {
   color: #333;
 }
 .contact-block a {
-  color: #333333;
+  text-decoration: underline;
 }
 .contact-block label {
   float: left;
   font-size: 24px;
   width: 50px;
   text-align: center;
+}
+.text {
+  font-size: 17px;
+  padding: 1em 3em 1em 1em;
 }

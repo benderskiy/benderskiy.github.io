@@ -8,24 +8,26 @@
     <title>Benderskiy — Web and UI-developer</title>
     
     <link rel="stylesheet" type="text/css" href="styles/style.css">
-    <link rel="stylesheet" href="styles/font-awesome.min.css" >
+    <link rel="stylesheet" href="styles/font-awesome.min.css">
 </head>
 
 <body>
-
     <link href='http://fonts.googleapis.com/css?family=Roboto:300&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
 
-    <div class="paper">
+    <div class="paper en">
         <div class='header'>
-            <div class="logo">
-                <div class="sign en">
-                    <div class="front">
-                        Michael Benderskiy — Web and UI-developer
-                    </div>
-                    <div class="back">
-                        Михаил Бендерский — Веб и UI-разработчик
-                    </div>
+            <div class="sign en">
+                <div class="front">
+                    Michael Benderskiy — Web and UI-developer
                 </div>
+                <div class="back">
+                    Михаил Бендерский — Веб и UI-разработчик
+                </div>
+            </div>
+            <div class="lang-select en">
+                <div class="selector"></div>
+                <span class='eng select'>eng</span><!-- 
+             --><span class='rus select'>рус</span>
             </div>
         </div>
 
@@ -33,9 +35,11 @@
             <div class="section no-padding">
                 <div class="section-padding">
                     <div class="section-header">
-                        Skills and Experience
+                        <span class="e">Full stack web-development</span>
+                        <span class="r">Весь стек веб-разработки</span>
                     </div>
-                    in business projects
+                    <span class="e">my experience in сommercial projects:</span>
+                    <span class="r">мой опыт в коммерческих проектах:</span>
                 </div>
 
                 <div class="graph-wrapper">
@@ -116,16 +120,23 @@
 
             <div class="section">
                 <div class="section-header">
-                    Contacts
+                    <span class="e">Contacts</span>
+                    <span class="r">Контакты</span>
                 </div>
                 <div class="contact-block">
                     <label><i class="fa fa-user"></i>
                     </label>
-                    <span class='red'>Michael Benderskiy</span>
+                    <span class='red'>
+                        <span class="e">Michael Benderskiy</span>
+                        <span class="r">Михаил Бендерский</span>
+                    </span>
                     <br>
                     <label><i class="fa fa-map-marker"></i>
                     </label>
-                    <a href="http://maps.google.com/maps?z=10,q=50.6,36.6">Russia, Belgorod</a>
+                    <a href="http://maps.google.com/maps?z=10,q=50.6,36.6">
+                        <span class="e">Russia, Belgorod</span>
+                        <span class="r">Россия, Белгород</span>
+                    </a>
                     <br>
                     <label><i class="fa fa-envelope"></i>
                     </label>
@@ -148,23 +159,36 @@
 
             <div class="section">
                 <div class="section-header">
-                    Education
+                    <span class="e">About me</span>
+                    <span class="r">Обо мне</span>
                 </div>
-                <h2>Belgorod State Technological University</h2>
-                <h4>Faculty: Institute of Information Technologies and Operating Systems</h4>
-                <h4>Department: Computer software and automated systems</h4>
-                Bachelor's <sup>4 years</sup> and Specialist's (diplom) <sup>5 years</sup> degrees, both with <b>honours!</b>
+                <div class="text e">
+                    I've finished <a href="http://en.bstu.ru/">BST University</a> with a bachelor (4 years of study) and specialist (5 years of study, diploma) degrees, both with <b>honours</b>.<br><br>
+                    During last few years i'm doing full stack web-development (<b>front-end</b> and <b>back-end</b>). I have experience of a long-term team development of commercial web-applications based on node.js and MVC-frameworks.<br><br>
+                    Nowadays i'm in freelance and ready for a one-time project or a long-term distant work!<br><br>
+                    I'm interested in a plenty of aspects of a web-development: from HTML5 and CSS3 to functional programming, from NoSQL to UI/UX design. I love to work on something new and to explore different fields of software development.<br><br>
+                    My hobbies are traveling, photography and <a href="http://www.usaultimate.org/about/ultimate/default.aspx">ultimate</a>!
+                </div>
+                <div class="text r">
+                    Я закончил <a href="http://www.bstu.ru/">БГТУ имени Шухова</a> с <b>красным</b> дипломом инженера-программиста.<br><br>
+                    На протяжении нескольких лет занимаюсь веб-разработкой: как <b>front-end</b>, так и <b>back-end</b>. Имею долгосрочный опыт работы в команде над коммерческими веб-приложениями на базе node.js и MVC-фреймворков.<br><br>
+                    В данный момент я занимаюсь фрилансом и готов к разовому сотрудничеству или постоянной удаленной работе!<br><br>
+                    Мне интересны абсолютно различные аспекты веб-разработки: от HTML5 и CSS3 до функционального программирования, от NoSQL до разработки пользовательских интерфейсов и взаимодействий. Я с готовностью берусь за новые для меня задачи и осваиваю новые области профессиональной деятельности.<br><br>
+                    В свободное время путешествую, фотографирую и занимаюсь <a href="http://175g.ru/">алтиматом</a>!
+                </div>
             </div>
 
-            <div class="section">
+<!--             <div class="section">
                 <div class="section-header">
-                    Links
+                    <span class="e">Links</span>
+                    <span class="r">ПРочее</span>
                 </div>
-            </div>
+            </div> -->
 
         </div>
     </div>
 
+    <script type="text/javascript" src="js/scripts.js"></script>
 </body>
 
 </html>
