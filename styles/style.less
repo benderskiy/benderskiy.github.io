@@ -275,76 +275,38 @@
     }
 }
 //ANIMATIONS
-@-moz-keyframes spin {
+@-moz-keyframes spining {
     from { -moz-transform: rotate(0deg); }
     to { -moz-transform: rotate(360deg); }
 }
-@-webkit-keyframes spin {
+@-webkit-keyframes spining {
     from { -webkit-transform: rotate(0deg); }
     to { -webkit-transform: rotate(360deg); }
 }
-@keyframes spin {
+@keyframes spining {
     from {transform:rotate(0deg);}
     to {transform:rotate(360deg);}
 }
 
-@-moz-keyframes aspin {
+@-moz-keyframes aspining {
     from { -moz-transform: rotate(0deg); }
     to { -moz-transform: rotate(-360deg); }
 }
-@-webkit-keyframes aspin {
+@-webkit-keyframes aspining {
     from { -webkit-transform: rotate(0deg); }
     to { -webkit-transform: rotate(-360deg); }
 }
-@keyframes aspin {
+@keyframes aspining {
     from {transform:rotate(0deg);}
     to {transform:rotate(-360deg);}
 }
 .spining(@period: 10s, @type: linear) {
-    .animation(spin @period @type infinite);
+    .rotate(0deg);
+    .animation(spining @period @type infinite);
 }
 .aspining(@period: 10s, @type: linear) {
-    .animation(aspin @period @type infinite);
-}
-
-@init-socket-margin: -127% -22%;
-@end-socket-margin: -116% 40%;
-@-moz-keyframes slide-socket {
-    0% { margin: @init-socket-margin; }
-    50% { margin: @end-socket-margin; }
-    100% { margin: @init-socket-margin; }
-}
-@-webkit-keyframes slide-socket {
-    0% { margin: @init-socket-margin; }
-    50% { margin: @end-socket-margin; }
-    100% { margin: @init-socket-margin; }
-}
-@keyframes slide-socket {
-    0% {margin: @init-socket-margin; }
-    50% { margin: @end-socket-margin; }
-    100% {margin: @init-socket-margin; }
-}
-.sliding-socket(@period: 10s, @type: linear) {
-    .animation(slide-socket @period @type infinite);
-}
-
-@-moz-keyframes pulse {
-    0% { -moz-transform: scale(1); }
-    50% { -moz-transform: scale(0.8); }
-    100% { -moz-transform: scale(1); }
-}
-@-webkit-keyframes pulse {
-    0% { -webkit-transform: scale(1); }
-    50% { -webkit-transform: scale(0.8); }
-    100% { -webkit-transform: scale(1); }
-}
-@keyframes pulse {
-    0% {transform:scale(1);}
-    50% {transform:scale(0.8);}
-    100% {transform:scale(1);}
-}
-.pulsing(@period: 10s, @type: linear) {
-    .animation(pulse @period @type infinite);
+    .rotate(0deg);
+    .animation(aspining @period @type infinite);
 }
 // CONSTANTS 
 @white: #E8E8E8;
@@ -382,26 +344,19 @@ span {
     .logo {
         .user-select(none);
         cursor: pointer;
-        @logo-size : 7rem;
-        width: 100%;
-        height: @logo-size;
+        //width: 100%;
+        height: 7rem;
         .pull-center();
-        .circle {
-            width: 100%;
+
+        @logo-font: 1.5rem;
+        .sign {
+            //width: 100%;
             height: 100%;
-            @logo-font: 1.5rem;
             padding-top: 2.6rem;
             font-size: @logo-font;
             line-height: @logo-font;
             color: @black;
             text-align: center;
-
-            .transform-style(flat);
-
-            -webkit-transition: background 0.5s;
-            -moz-transition: background 0.5s;
-            -o-transition: background 0.5s;
-            transition: background 0.5s;
 
             .back {
                 margin-top: -@logo-font;
@@ -419,18 +374,16 @@ span {
                 -o-transition: -o-transform 0.5s;
                 transition: transform 0.5s;
             }
-        }
-        &:hover {
-            .circle {
+            &.ru {
                 .back {
                     .transform(rotatey(0deg));
                 }
                 .front {
                     .transform(rotatey(180deg));
                 }
-                //background: @black;
             }
         }
+        
     }
 }
 
@@ -522,14 +475,12 @@ span {
         }
         .mysql {
             .circle(3.5em);
-            //.pulsing(3s, linear);
             margin: -2em -4em;
             font-size: 1.4em;
             background-color: rgba(190, 149, 147, 0.9);
         }
         .mongo {
             .circle(4.7em);
-            //.pulsing(5s, ease);
             margin: 96% 96%;
             font-size: 1.2em;
             background-color: rgba(40, 10, 0, 0.5);
@@ -569,7 +520,7 @@ span {
 
                     .socket {
                         .circle(5em);
-                        margin: @init-socket-margin;
+                        margin: -127% -22%;
                         font-size: 0.8em;
                         background-color: rgba(32, 112, 145, 0.7);
                     }
@@ -614,12 +565,20 @@ span {
                 background-color: rgba(240, 219, 79, 0.7);
                 .aspining(@nodjs-period);
 
-                .jqui {
-                    .circle(5em);
-                    margin: @init-socket-margin;
-                    font-size: 0.7em;
-                    background-color: rgba(178, 73, 38, 0.6);
+                .jquery-orbit {
+                    .circle(6em);
+                    margin: -5.5em -0.5em;
+                    .aspining(@nodjs-period/2);
+
+                    .jqui {
+                        .circle(5em);
+                        margin: -127% -22%;
+                        .spining(@nodjs-period/2);
+                        font-size: 0.7em;
+                        background-color: rgba(178, 73, 38, 0.6);
+                    }
                 }
+
             }
 
             .backbone {
