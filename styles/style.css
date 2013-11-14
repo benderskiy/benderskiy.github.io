@@ -82,6 +82,12 @@ body {
   background: #cccccc;
   font-family: 'Roboto', sans-serif;
 }
+@media only screen and (max-width: 340px) {
+  html,
+  body {
+    font-size: 0.9em;
+  }
+}
 .paper {
   zoom: 1;
   margin: auto;

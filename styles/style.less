@@ -323,7 +323,9 @@ html, body {
     margin: 0;
     background: @gray;
     font-family:'Roboto', sans-serif;
-    //min-width: 320px;
+    @media only screen and (max-width : 340px) {
+        font-size: 0.9em;
+    } 
 }
 
 .paper {
