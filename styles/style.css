@@ -81,7 +81,6 @@ body {
   margin: 0;
   background: #cccccc;
   font-family: 'Roboto', sans-serif;
-  min-width: 530px;
 }
 .paper {
   zoom: 1;
@@ -116,7 +115,7 @@ span.red {
 }
 .header .sign {
   height: 7rem;
-  width: 500px;
+  max-width: 500px;
   padding-top: 2.6rem;
   margin: 0 auto;
   cursor: default;
@@ -124,6 +123,31 @@ span.red {
   line-height: 1.5rem;
   color: #333333;
   text-align: center;
+}
+@media only screen and (max-width: 600px) {
+  .header .sign {
+    font-size: 1.3rem;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .header .sign {
+    font-size: 1.2rem;
+  }
+}
+@media only screen and (max-width: 420px) {
+  .header .sign {
+    font-size: 1.1rem;
+  }
+}
+@media only screen and (max-width: 420px) {
+  .header .sign {
+    font-size: 1rem;
+  }
+}
+@media only screen and (max-width: 360px) {
+  .header .sign {
+    font-size: 0.9rem;
+  }
 }
 .header .sign .back {
   margin-top: -1.5rem;
@@ -249,6 +273,36 @@ a {
 @media only screen and (max-width: 640px) {
   .graph-wrapper {
     font-size: 0.8em;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .graph-wrapper {
+    font-size: 0.75em;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .graph-wrapper {
+    font-size: 0.7em;
+  }
+}
+@media only screen and (max-width: 450px) {
+  .graph-wrapper {
+    font-size: 0.65em;
+  }
+}
+@media only screen and (max-width: 420px) {
+  .graph-wrapper {
+    font-size: 0.6em;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .graph-wrapper {
+    font-size: 0.55em;
+  }
+}
+@media only screen and (max-width: 380px) {
+  .graph-wrapper {
+    font-size: 0.5em;
   }
 }
 .graph-wrapper .graph {
@@ -639,6 +693,11 @@ a {
   line-height: 2em;
   color: #333;
 }
+@media only screen and (max-width: 360px) {
+  .contact-block {
+    padding: 1em 0em;
+  }
+}
 .contact-block a {
   text-decoration: underline;
 }
@@ -650,5 +709,6 @@ a {
 }
 .text {
   font-size: 17px;
-  padding: 1em 3em 1em 1em;
+  padding: 1em;
+  max-width: 900px;
 }
