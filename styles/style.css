@@ -135,12 +135,12 @@ span.red {
     font-size: 1.3rem;
   }
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 520px) {
   .header .sign {
     font-size: 1.2rem;
   }
 }
-@media only screen and (max-width: 420px) {
+@media only screen and (max-width: 450px) {
   .header .sign {
     font-size: 1.1rem;
   }
@@ -150,7 +150,7 @@ span.red {
     font-size: 1rem;
   }
 }
-@media only screen and (max-width: 360px) {
+@media only screen and (max-width: 380px) {
   .header .sign {
     font-size: 0.9rem;
   }
