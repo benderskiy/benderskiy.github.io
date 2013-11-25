@@ -322,7 +322,7 @@ html, body {
     height: 100%;
     margin: 0;
     background: @gray;
-    font-family:'Roboto', sans-serif;
+    font-family:'Roboto Light', sans-serif;
     @media only screen and (max-width : 340px) {
         font-size: 0.9em;
     } 
@@ -359,7 +359,6 @@ span {
     @sign-font: 1.5rem;
     .sign {
         height: 7rem;
-        max-width: 500px;
         padding-top: 2.6rem;
         .pull-center();
 
@@ -419,33 +418,25 @@ span {
         border-radius: 5px;
         overflow: hidden;
         @lang-width: 3.2em;
-        @lang-height: 2em;
         .select {
             display: inline-block;
             width: @lang-width;
             padding: 0.2em 0.5em 0.4em 0.5em;
             text-align: center;
             cursor: pointer;
-            background: rgba(0, 0, 0, 0.10);
-        }
-        .selector {
-            margin-bottom: -@lang-height;
-            height: @lang-height;
-            width: @lang-width;
-            background: #C00;
+            background: rgb(229, 229, 229);
         }
 
         &.en {
             .eng {
                 color: #FFF;
+                background: rgb(183, 0, 0);
             }
         }
         &.ru {
             .rus {
                 color: #FFF;
-            }
-            .selector {
-                float: right;
+                background: rgb(183, 0, 0);
             }
         }
     }
@@ -479,6 +470,14 @@ a {
         padding: 0;
         .section-padding {
             padding: 1rem;
+        }
+    }
+    &.portfolio {
+        font-size: 1.5rem;
+        text-align: center;
+        padding: 2rem;
+        .link-portfolio {
+            text-decoration: underline;
         }
     }
 }
@@ -705,7 +704,6 @@ a {
         text-decoration: underline;
     }
     label {
-        float: left;
         font-size: 24px;
         width: 50px;
         text-align: center;

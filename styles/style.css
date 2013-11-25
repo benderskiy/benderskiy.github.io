@@ -80,7 +80,7 @@ body {
   height: 100%;
   margin: 0;
   background: #cccccc;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto Light', sans-serif;
 }
 @media only screen and (max-width: 340px) {
   html,
@@ -92,7 +92,7 @@ body {
   zoom: 1;
   margin: auto;
   max-width: 1000px;
-  background: #FFF;
+  background: white;
 }
 .paper:before,
 .paper:after {
@@ -109,7 +109,7 @@ body {
   display: none;
 }
 span.red {
-  color: #C00;
+  color: #cc0000;
 }
 .header {
   padding: 1rem;
@@ -121,7 +121,6 @@ span.red {
 }
 .header .sign {
   height: 7rem;
-  max-width: 500px;
   padding-top: 2.6rem;
   margin: 0 auto;
   cursor: default;
@@ -207,22 +206,15 @@ span.red {
   padding: 0.2em 0.5em 0.4em 0.5em;
   text-align: center;
   cursor: pointer;
-  background: rgba(0, 0, 0, 0.1);
-}
-.header .lang-select .selector {
-  margin-bottom: -2em;
-  height: 2em;
-  width: 3.2em;
-  background: #C00;
+  background: #e5e5e5;
 }
 .header .lang-select.en .eng {
-  color: #FFF;
+  color: white;
+  background: #b70000;
 }
 .header .lang-select.ru .rus {
-  color: #FFF;
-}
-.header .lang-select.ru .selector {
-  float: right;
+  color: white;
+  background: #b70000;
 }
 a {
   text-decoration: none;
@@ -253,6 +245,14 @@ a {
 }
 .section.no-padding .section-padding {
   padding: 1rem;
+}
+.section.portfolio {
+  font-size: 1.5rem;
+  text-align: center;
+  padding: 2rem;
+}
+.section.portfolio .link-portfolio {
+  text-decoration: underline;
 }
 .graph-wrapper {
   position: relative;
@@ -697,7 +697,7 @@ a {
   padding: 2em 0em;
   font-size: 1.2em;
   line-height: 2em;
-  color: #333;
+  color: #333333;
 }
 @media only screen and (max-width: 360px) {
   .contact-block {
@@ -708,7 +708,6 @@ a {
   text-decoration: underline;
 }
 .contact-block label {
-  float: left;
   font-size: 24px;
   width: 50px;
   text-align: center;
