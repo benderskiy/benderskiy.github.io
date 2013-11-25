@@ -92,7 +92,7 @@ body {
   zoom: 1;
   margin: auto;
   max-width: 1000px;
-  background: white;
+  background: #FFF;
 }
 .paper:before,
 .paper:after {
@@ -109,7 +109,7 @@ body {
   display: none;
 }
 span.red {
-  color: #cc0000;
+  color: #C00;
 }
 .header {
   padding: 1rem;
@@ -209,15 +209,12 @@ span.red {
   background: #e5e5e5;
 }
 .header .lang-select.en .eng {
-  color: white;
+  color: #FFF;
   background: #b70000;
 }
 .header .lang-select.ru .rus {
-  color: white;
+  color: #FFF;
   background: #b70000;
-}
-a {
-  text-decoration: none;
 }
 .section {
   float: left;
@@ -697,15 +694,12 @@ a {
   padding: 2em 0em;
   font-size: 1.2em;
   line-height: 2em;
-  color: #333333;
+  color: #333;
 }
 @media only screen and (max-width: 360px) {
   .contact-block {
     padding: 1em 0em;
   }
-}
-.contact-block a {
-  text-decoration: underline;
 }
 .contact-block label {
   font-size: 24px;
@@ -716,4 +710,7 @@ a {
   font-size: 17px;
   padding: 1em;
   max-width: 900px;
+}
+.text a {
+  text-decoration: none;
 }
