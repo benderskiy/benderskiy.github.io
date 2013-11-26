@@ -782,6 +782,48 @@ span.red {
 .portfolio-content .project {
   display: inline-block;
   margin: 1em;
+  width: 310px;
+  vertical-align: top;
+}
+.portfolio-content .screens {
+  position: relative;
+  width: 310px;
+  height: 220px;
+}
+.portfolio-content .screens .screen1 {
+  position: absolute;
+  top: 17%;
+}
+.portfolio-content .screens .screen1 .preview-circle {
+  width: 180px;
+  height: 180px;
+}
+.portfolio-content .screens .screen2 {
+  position: absolute;
+  top: 1%;
+  left: 52%;
+}
+.portfolio-content .screens .screen2 .preview-circle {
+  width: 90px;
+  height: 90px;
+}
+.portfolio-content .screens .screen3 {
+  position: absolute;
+  top: 41%;
+  left: 60%;
+}
+.portfolio-content .screens .screen3 .preview-circle {
+  width: 120px;
+  height: 120px;
+}
+.portfolio-content .screens .preview-circle {
+  box-shadow: 1px 1px 6px rgba(128, 128, 128, 0.5);
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  border-radius: 100%;
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
 }
 .portfolio-content .monitor {
   display: table;

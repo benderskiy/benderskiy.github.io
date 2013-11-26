@@ -776,11 +776,49 @@ span {
     height: 100em;
     padding-top: 1em;
     text-align: center;
-
+    
     .project {
         display: inline-block;
-        //vertical-align: top;
         margin: 1em;
+        width: 310px;
+        vertical-align: top;
+    }
+
+    .screens {
+        position: relative;
+        width: 310px;
+        height: 220px;
+        .screen1 {
+            position: absolute;
+            top: 17%;
+            .preview-circle {
+                width: 180px;
+                height: 180px;
+            }
+        }
+        .screen2 {
+            position: absolute;
+            top: 1%;
+            left: 52%;
+            .preview-circle {
+                width: 90px;
+                height: 90px;
+            }
+        }
+        .screen3 {
+            position: absolute;
+            top: 41%;
+            left: 60%;
+            .preview-circle {
+                width: 120px;
+                height: 120px;
+            }
+        }
+
+        .preview-circle {
+            box-shadow: 1px 1px 6px rgba(128, 128, 128, 0.5);
+            .border-radius(100%);
+        }
     }
 
     @mt-radius: 6px;
