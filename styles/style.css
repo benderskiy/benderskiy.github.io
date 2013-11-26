@@ -296,15 +296,6 @@ span.red {
 .section.no-padding .section-padding {
   padding: 1rem;
 }
-.section.portfolio {
-  font-size: 1.5rem;
-  text-align: center;
-  padding: 2rem;
-}
-.section.portfolio .link-portfolio {
-  color: #b70000;
-  text-decoration: underline;
-}
 .graph-wrapper {
   position: relative;
   overflow: hidden;
@@ -764,9 +755,13 @@ span.red {
   font-size: 17px;
   padding: 1em;
   max-width: 900px;
+  margin: auto;
 }
 .text a {
   text-decoration: none;
+}
+.text a:hover {
+  text-decoration: underline;
 }
 .sup-sign {
   display: inline-block;
@@ -774,49 +769,90 @@ span.red {
   font-size: 80%;
   color: #b70000;
 }
-.portfolio-content {
-  height: 100em;
-  padding-top: 1em;
+.portfolio {
   text-align: center;
 }
-.portfolio-content .project {
+@media only screen and (max-width: 880px) {
+  .portfolio {
+    font-size: 95%;
+  }
+}
+@media only screen and (max-width: 840px) {
+  .portfolio {
+    font-size: 90%;
+  }
+}
+@media only screen and (max-width: 797px) {
+  .portfolio {
+    font-size: 85%;
+  }
+}
+@media only screen and (max-width: 760px) {
+  .portfolio {
+    font-size: 100%;
+  }
+}
+.portfolio .project {
   display: inline-block;
-  margin: 1em;
-  width: 310px;
+  margin: 2em 3em;
+  width: 20em;
   vertical-align: top;
 }
-.portfolio-content .screens {
-  position: relative;
-  width: 310px;
-  height: 220px;
+.portfolio .project .project-name {
+  font-size: 120%;
+  color: #b70000;
+  cursor: pointer;
 }
-.portfolio-content .screens .screen1 {
+.portfolio .project .project-name:hover {
+  text-decoration: underline;
+}
+.portfolio .project .screens {
+  cursor: pointer;
+  margin: 0.5em 0;
+}
+.portfolio .project .project-about {
+  margin-left: -2em;
+  width: 24em;
+}
+.portfolio .project .tag {
+  color: #FFF;
+  font-size: 90%;
+  padding: 0px 6px;
+  background: #333333;
+  border-radius: 4px;
+}
+.portfolio .screens {
+  position: relative;
+  width: 19em;
+  height: 15em;
+}
+.portfolio .screens .screen1 {
   position: absolute;
   top: 17%;
 }
-.portfolio-content .screens .screen1 .preview-circle {
-  width: 180px;
-  height: 180px;
+.portfolio .screens .screen1 .preview-circle {
+  width: 11em;
+  height: 11em;
 }
-.portfolio-content .screens .screen2 {
+.portfolio .screens .screen2 {
   position: absolute;
   top: 1%;
   left: 52%;
 }
-.portfolio-content .screens .screen2 .preview-circle {
-  width: 90px;
-  height: 90px;
+.portfolio .screens .screen2 .preview-circle {
+  width: 6em;
+  height: 6em;
 }
-.portfolio-content .screens .screen3 {
+.portfolio .screens .screen3 {
   position: absolute;
   top: 41%;
   left: 60%;
 }
-.portfolio-content .screens .screen3 .preview-circle {
-  width: 120px;
-  height: 120px;
+.portfolio .screens .screen3 .preview-circle {
+  width: 9em;
+  height: 9em;
 }
-.portfolio-content .screens .preview-circle {
+.portfolio .screens .preview-circle {
   box-shadow: 1px 1px 6px rgba(128, 128, 128, 0.5);
   -webkit-border-radius: 100%;
   -moz-border-radius: 100%;
@@ -825,10 +861,10 @@ span.red {
   -moz-background-clip: padding;
   background-clip: padding-box;
 }
-.portfolio-content .monitor {
+.portfolio .monitor {
   display: table;
   margin: auto;
-  margin-bottom: 3.5em;
+  margin-bottom: 2.8em;
   position: relative;
   padding: 1em;
   border: 1px solid #cccccc;
@@ -840,18 +876,7 @@ span.red {
   -moz-background-clip: padding;
   background-clip: padding-box;
 }
-.portfolio-content .monitor .screen {
-  /*position: relative;
-            &:before {
-                display: block;
-                content: '';
-                position: absolute;
-                width: 100%;
-                height: 100%;
-                background: linear-gradient(30deg, rgba(204, 204, 204, 0) 0%,rgba(204, 204, 204, 0) 55%,rgba(204, 204, 204, 0.2) 56%,rgba(204, 204, 204, 0) 100%);
-            }*/
-}
-.portfolio-content .monitor .screen .preview {
+.portfolio .monitor .screen .preview {
   max-width: 20em;
   max-height: 20em;
   border: 1px solid #cccccc;
@@ -862,7 +887,7 @@ span.red {
   -moz-background-clip: padding;
   background-clip: padding-box;
 }
-.portfolio-content .monitor:after {
+.portfolio .monitor:after {
   display: block;
   content: '';
   position: absolute;
@@ -870,19 +895,20 @@ span.red {
   margin-left: -15%;
   left: 50%;
   width: 30%;
-  height: 2em;
+  height: 1.5em;
   border: 1px solid #cccccc;
   border-bottom: none;
+  border-top: none;
 }
-.portfolio-content .monitor:before {
+.portfolio .monitor:before {
   display: block;
   content: '';
   position: absolute;
   top: 100%;
-  margin-top: 2em;
+  margin-top: 1.5em;
   margin-left: -35%;
   left: 50%;
   width: 70%;
-  height: 0.5em;
+  height: 0.3em;
   border: 1px solid #cccccc;
 }

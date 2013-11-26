@@ -520,15 +520,6 @@ span {
             padding: 1rem;
         }
     }
-    &.portfolio {
-        font-size: 1.5rem;
-        text-align: center;
-        padding: 2rem;
-        .link-portfolio {
-            color: @red;
-            text-decoration: underline;
-        }
-    }
 }
 
 .graph-wrapper {
@@ -760,8 +751,12 @@ span {
     font-size: 17px;
     padding: 1em;
     max-width: 900px;
+    margin: auto;
     a {
         text-decoration: none;
+        &:hover {
+            text-decoration: underline;
+        }
     }
 }
 
@@ -772,28 +767,63 @@ span {
     color: @red;
 }
 
-.portfolio-content {
-    height: 100em;
-    padding-top: 1em;
+.portfolio {
     text-align: center;
+    @media only screen and (max-width : 880px) {
+        font-size: 95%;
+    }    
+    @media only screen and (max-width : 840px) {
+        font-size: 90%;
+    }    
+    @media only screen and (max-width : 797px) {
+        font-size: 85%;
+    }   
+    @media only screen and (max-width : 760px) {
+        font-size: 100%;
+    }  
     
     .project {
         display: inline-block;
-        margin: 1em;
-        width: 310px;
+        margin: 2em 3em;
+        width: 20em;
         vertical-align: top;
+
+        .project-name {
+            font-size: 120%;
+            color: @red;
+            cursor: pointer;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+        .screens {
+            cursor: pointer;
+            margin: 0.5em 0;
+        }
+        .project-about {
+            //text-align: left;
+            margin-left: -2em;
+            width: 24em;
+        }
+        .tag {
+            color: #FFF;
+            font-size: 90%;
+            padding: 0px 6px;
+            background: @black;
+            border-radius: 4px;
+        }
     }
 
     .screens {
         position: relative;
-        width: 310px;
-        height: 220px;
+        width: 19em;
+        height: 15em;
         .screen1 {
             position: absolute;
             top: 17%;
             .preview-circle {
-                width: 180px;
-                height: 180px;
+                width: 11em;
+                height: 11em;
             }
         }
         .screen2 {
@@ -801,8 +831,8 @@ span {
             top: 1%;
             left: 52%;
             .preview-circle {
-                width: 90px;
-                height: 90px;
+                width: 6em;
+                height: 6em;
             }
         }
         .screen3 {
@@ -810,8 +840,8 @@ span {
             top: 41%;
             left: 60%;
             .preview-circle {
-                width: 120px;
-                height: 120px;
+                width: 9em;
+                height: 9em;
             }
         }
 
@@ -823,9 +853,9 @@ span {
 
     @mt-radius: 6px;
     @mt-color: @gray;
-    @mt-stand-height: 2em;
+    @mt-stand-height: 1.5em;
     @mt-stand-width: 30%;
-    @mt-under-height: 0.5em;
+    @mt-under-height: 0.3em;
     @mt-under-width: 70%;
     .monitor {
         display: table;
@@ -839,16 +869,6 @@ span {
         .border-radius(@mt-radius);
 
         .screen {
-            /*position: relative;
-            &:before {
-                display: block;
-                content: '';
-                position: absolute;
-                width: 100%;
-                height: 100%;
-                background: linear-gradient(30deg, rgba(204, 204, 204, 0) 0%,rgba(204, 204, 204, 0) 55%,rgba(204, 204, 204, 0.2) 56%,rgba(204, 204, 204, 0) 100%);
-            }*/
-
             .preview {
                 max-width: 20em;
                 max-height: 20em;
@@ -868,6 +888,7 @@ span {
             height: @mt-stand-height;
             border: 1px solid @mt-color;
             border-bottom: none;
+            border-top: none;
         }
         &:before {
             display: block;
