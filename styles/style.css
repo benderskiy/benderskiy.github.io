@@ -158,7 +158,7 @@ body {
   display: none;
 }
 span.red {
-  color: #C00;
+  color: #b70000;
 }
 .header {
   padding: 1rem;
@@ -167,6 +167,10 @@ span.red {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+}
+.header a {
+  text-decoration: none;
+  color: #333333;
 }
 .header .sign {
   height: 7rem;
@@ -298,6 +302,7 @@ span.red {
   padding: 2rem;
 }
 .section.portfolio .link-portfolio {
+  color: #b70000;
   text-decoration: underline;
 }
 .graph-wrapper {
@@ -743,7 +748,7 @@ span.red {
   padding: 2em 0em;
   font-size: 1.2em;
   line-height: 2em;
-  color: #333;
+  color: #333333;
 }
 @media only screen and (max-width: 360px) {
   .contact-block {
@@ -762,4 +767,80 @@ span.red {
 }
 .text a {
   text-decoration: none;
+}
+.sup-sign {
+  display: inline-block;
+  margin: 0.7em;
+  font-size: 80%;
+  color: #b70000;
+}
+.portfolio-content {
+  height: 100em;
+  padding-top: 1em;
+  text-align: center;
+}
+.portfolio-content .project {
+  display: inline-block;
+  margin: 1em;
+}
+.portfolio-content .monitor {
+  display: table;
+  margin: auto;
+  margin-bottom: 3.5em;
+  position: relative;
+  padding: 1em;
+  border: 1px solid #cccccc;
+  background: #FAFAFA;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+}
+.portfolio-content .monitor .screen {
+  /*position: relative;
+            &:before {
+                display: block;
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(30deg, rgba(204, 204, 204, 0) 0%,rgba(204, 204, 204, 0) 55%,rgba(204, 204, 204, 0.2) 56%,rgba(204, 204, 204, 0) 100%);
+            }*/
+}
+.portfolio-content .monitor .screen .preview {
+  max-width: 20em;
+  max-height: 20em;
+  border: 1px solid #cccccc;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+}
+.portfolio-content .monitor:after {
+  display: block;
+  content: '';
+  position: absolute;
+  margin-top: 1em;
+  margin-left: -15%;
+  left: 50%;
+  width: 30%;
+  height: 2em;
+  border: 1px solid #cccccc;
+  border-bottom: none;
+}
+.portfolio-content .monitor:before {
+  display: block;
+  content: '';
+  position: absolute;
+  top: 100%;
+  margin-top: 2em;
+  margin-left: -35%;
+  left: 50%;
+  width: 70%;
+  height: 0.5em;
+  border: 1px solid #cccccc;
 }

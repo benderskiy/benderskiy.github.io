@@ -308,11 +308,6 @@
     .rotate(0deg);
     .animation(aspining @period @type infinite);
 }
-// CONSTANTS 
-@white: #E8E8E8;
-@gray: #CCC;
-@black: #333;
-@yellow: #990;
 
 // FONTS
 @font-face {
@@ -360,6 +355,13 @@
 .icon-skype:before { content: '\e801'; }
 .icon-vkontakte:before { content: '\e800'; }
 
+// CONSTANTS 
+@white: #E8E8E8;
+@gray: #CCC;
+@black: #333;
+@yellow: #990;
+@red: #b70000;
+
 // STYLES 
 * {
     .border-box();
@@ -393,7 +395,7 @@ html, body {
 
 span {
     &.red {
-        color: #C00;
+        color: @red;
     }
 }
 
@@ -401,6 +403,10 @@ span {
     padding: 1rem;
     position: relative;
     .user-select(none);   
+    a {
+        text-decoration: none;
+        color: @black;
+    }
 
     @sign-font: 1.5rem;
     .sign {
@@ -476,13 +482,13 @@ span {
         &.en {
             .eng {
                 color: #FFF;
-                background: rgb(183, 0, 0);
+                background: @red;
             }
         }
         &.ru {
             .rus {
                 color: #FFF;
-                background: rgb(183, 0, 0);
+                background: @red;
             }
         }
     }
@@ -519,6 +525,7 @@ span {
         text-align: center;
         padding: 2rem;
         .link-portfolio {
+            color: @red;
             text-decoration: underline;
         }
     }
@@ -741,7 +748,7 @@ span {
     }    
     font-size: 1.2em;
     line-height: 2em;
-    color: #333;
+    color: @black;
     label {
         font-size: 24px;
         width: 50px;
@@ -755,5 +762,86 @@ span {
     max-width: 900px;
     a {
         text-decoration: none;
+    }
+}
+
+.sup-sign {
+    display: inline-block;
+    margin: 0.7em;
+    font-size: 80%;
+    color: @red;
+}
+
+.portfolio-content {
+    height: 100em;
+    padding-top: 1em;
+    text-align: center;
+
+    .project {
+        display: inline-block;
+        //vertical-align: top;
+        margin: 1em;
+    }
+
+    @mt-radius: 6px;
+    @mt-color: @gray;
+    @mt-stand-height: 2em;
+    @mt-stand-width: 30%;
+    @mt-under-height: 0.5em;
+    @mt-under-width: 70%;
+    .monitor {
+        display: table;
+        margin: auto;
+        margin-bottom: 1em+@mt-stand-height + @mt-under-height;
+        position: relative;
+
+        padding: 1em;
+        border: 1px solid @mt-color;
+        background: #FAFAFA;
+        .border-radius(@mt-radius);
+
+        .screen {
+            /*position: relative;
+            &:before {
+                display: block;
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(30deg, rgba(204, 204, 204, 0) 0%,rgba(204, 204, 204, 0) 55%,rgba(204, 204, 204, 0.2) 56%,rgba(204, 204, 204, 0) 100%);
+            }*/
+
+            .preview {
+                max-width: 20em;
+                max-height: 20em;
+                border: 1px solid @mt-color;
+                .border-radius(@mt-radius);
+            }
+        }
+
+        &:after {
+            display: block;
+            content: '';
+            position: absolute;
+            margin-top: 1em;
+            margin-left: -@mt-stand-width/2;
+            left: 50%;
+            width: @mt-stand-width;
+            height: @mt-stand-height;
+            border: 1px solid @mt-color;
+            border-bottom: none;
+        }
+        &:before {
+            display: block;
+            content: '';
+            position: absolute;
+            top: 100%;
+            margin-top: @mt-stand-height;
+            margin-left: -@mt-under-width/2;
+            left: 50%;
+            width: @mt-under-width;
+            height: @mt-under-height;
+            border: 1px solid @mt-color;
+        }
     }
 }
