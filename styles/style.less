@@ -467,7 +467,7 @@ span {
         top: 1em;
         right: 1em;
         font-size: 0.8em;
-        border-radius: 5px;
+        .border-radius(5px);
         overflow: hidden;
         @lang-width: 3.2em;
         .select {
@@ -571,7 +571,7 @@ span {
         .circle(@size) {
             margin-left: -@size/2;
             margin-top: -@size/2;
-            border-radius: 100%;
+            .border-radius(100%);
             text-align: center;
             width: @size;
             height: @size;
@@ -805,12 +805,21 @@ span {
             margin-left: -2em;
             width: 24em;
         }
+        .tags {
+            margin-top: 0.3em;   
+        }
         .tag {
             color: #FFF;
             font-size: 90%;
             padding: 0px 6px;
             background: @black;
-            border-radius: 4px;
+            .border-radius(4px);
+            &.orange {
+                background: rgb(241, 101, 41);
+            }
+            &.green {
+                background: rgb(131, 205, 41);
+            }
         }
     }
 
@@ -851,21 +860,33 @@ span {
         }
     }
 
-    @mt-radius: 6px;
-    @mt-color: @gray;
-    @mt-stand-height: 1.5em;
+    @mt-radius: 12px;
+    @mt-color: #FFF;
+    @mt-screen-color: #666;
+    @mt-bg: #000;
     @mt-stand-width: 30%;
-    @mt-under-height: 0.3em;
+    @mt-under-height: 1em;
+    @mt-under-height2: .5em;
+    @mt-stand-height: 3em;
+    @mt-stand-height2: 2em;
     @mt-under-width: 70%;
+    @mt-padding: 4%;
     .monitor {
         display: table;
         margin: auto;
-        margin-bottom: 1em+@mt-stand-height + @mt-under-height;
+        margin-bottom: @mt-under-height + @mt-stand-height + @mt-under-height;
+        @media only screen and (max-width : 670px) {
+            margin-bottom: @mt-under-height + @mt-stand-height2 + @mt-under-height;
+        }  
+        @media only screen and (max-width : 460px) {
+            height: @mt-under-height2  + @mt-stand-height2 + @mt-under-height;
+        }  
         position: relative;
 
-        padding: 1em;
+        padding: @mt-padding;
         border: 1px solid @mt-color;
-        background: #FAFAFA;
+        background: @mt-bg;
+        z-index: 2;
         .border-radius(@mt-radius);
 
         .screen {
@@ -875,20 +896,41 @@ span {
                 border: 1px solid @mt-color;
                 .border-radius(@mt-radius);
             }
+            .preview-full {
+                width: 100%;
+                border: 1px solid @mt-screen-color;
+                .border-radius(@mt-radius);
+            }
+            &:before {
+                display: block;
+                content: '';
+                position: absolute;
+                z-index: 2;
+                margin-left: -@mt-padding;
+                margin-top: -@mt-padding;
+                width: 100%;
+                height: 100%; 
+                background: linear-gradient(30deg, rgba(204, 204, 204, 0) 0%,rgba(204, 204, 204, 0) 55%,rgba(204, 204, 204, 0.2) 56%,rgba(204, 204, 204, 0) 100%);
+            }
         }
 
         &:after {
             display: block;
             content: '';
             position: absolute;
-            margin-top: 1em;
+            top: 100%;
             margin-left: -@mt-stand-width/2;
             left: 50%;
             width: @mt-stand-width;
             height: @mt-stand-height;
+            @media only screen and (max-width : 670px) {
+                height: @mt-stand-height2;
+            }  
             border: 1px solid @mt-color;
             border-bottom: none;
             border-top: none;
+            background: @mt-bg;
+
         }
         &:before {
             display: block;
@@ -896,11 +938,45 @@ span {
             position: absolute;
             top: 100%;
             margin-top: @mt-stand-height;
+            @media only screen and (max-width : 670px) {
+                margin-top: @mt-stand-height2;
+            }  
             margin-left: -@mt-under-width/2;
             left: 50%;
             width: @mt-under-width;
             height: @mt-under-height;
+            @media only screen and (max-width : 460px) {
+                height: @mt-under-height2;
+            }  
             border: 1px solid @mt-color;
+            background: @mt-bg;
         }
+
+        &.full {
+            width: 100%;
+            padding-bottom: 0;
+            .screen {
+                margin-bottom: -5px;
+            }
+            .panel {
+                color: @gray;
+                height: 2em;
+                line-height: 2em;
+                span {
+                    font-size: 90%;
+                }
+            }
+            &:after {
+                border-top: 1px solid @mt-color;
+                border-bottom: 1px solid @mt-color;
+            }
+            &:before {
+                z-index: 1;
+            }
+
+        }
+    }
+    .monitor-wrapper {
+        padding: 2em;
     }
 }
