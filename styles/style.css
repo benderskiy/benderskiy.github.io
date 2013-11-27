@@ -1076,8 +1076,13 @@ span.red {
   }
 }
 .portfolio .monitor.full {
-  width: 100%;
+  width: 90%;
   padding-bottom: 0;
+}
+@media only screen and (max-width: 950px) {
+  .portfolio .monitor.full {
+    width: 100%;
+  }
 }
 .portfolio .monitor.full .screen {
   margin-bottom: -5px;
