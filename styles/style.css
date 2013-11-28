@@ -1066,7 +1066,6 @@ span.red {
 }
 .portfolio .monitor-wrapper .monitor-full {
   width: 90%;
-  display: table;
   margin: auto;
   position: relative;
 }
