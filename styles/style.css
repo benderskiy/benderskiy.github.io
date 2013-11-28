@@ -22,6 +22,45 @@
 .clearfix:after {
   clear: both;
 }
+#top-loader-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: #ffffff;
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+#top-loader-bar.visible {
+  opacity: 0.5;
+  -webkit-transition: opacity linear 500ms;
+  -moz-transition: opacity linear 500ms;
+  -o-transition: opacity linear 500ms;
+  transition: opacity linear 500ms;
+}
+#top-loader-bar.visible #top-loader-bar-progress {
+  -webkit-transition: width ease-in-out 500ms;
+  -moz-transition: width ease-in-out 500ms;
+  -o-transition: width ease-in-out 500ms;
+  transition: width ease-in-out 500ms;
+}
+#top-loader-bar.hidden {
+  opacity: 0;
+  filter: alpha(opacity=0);
+  -webkit-transition: opacity linear 500ms;
+  -moz-transition: opacity linear 500ms;
+  -o-transition: opacity linear 500ms;
+  transition: opacity linear 500ms;
+}
+#top-loader-bar.success {
+  background: #00cc00;
+}
+#top-loader-bar #top-loader-bar-progress {
+  width: 0%;
+  height: 100%;
+  background: #00cc00;
+}
 @-moz-keyframes spining {
   from {
     -moz-transform: rotate(0deg);
@@ -863,252 +902,100 @@ span.red {
 .text a:hover {
   text-decoration: underline;
 }
-.sup-sign {
-  display: inline-block;
-  margin: 0.7em;
-  font-size: 80%;
-  color: #b70000;
-}
 .portfolio {
   text-align: center;
-}
-@media only screen and (max-width: 880px) {
-  .portfolio {
-    font-size: 95%;
-  }
-}
-@media only screen and (max-width: 840px) {
-  .portfolio {
-    font-size: 90%;
-  }
-}
-@media only screen and (max-width: 797px) {
-  .portfolio {
-    font-size: 85%;
-  }
-}
-@media only screen and (max-width: 760px) {
-  .portfolio {
-    font-size: 100%;
-  }
-}
-.portfolio .project {
-  display: inline-block;
-  margin: 2em 3em;
-  width: 20em;
-  vertical-align: top;
-}
-.portfolio .project .project-name {
-  font-size: 120%;
-  color: #b70000;
-  cursor: pointer;
-}
-.portfolio .project .project-name:hover {
-  text-decoration: underline;
-}
-.portfolio .project .screens {
-  cursor: pointer;
-  margin: 0.5em 0;
-}
-.portfolio .project .project-about {
-  margin-left: -2em;
-  width: 24em;
-}
-.portfolio .project .tags {
-  margin-top: 0.3em;
-}
-.portfolio .project .tag {
-  color: #FFF;
-  font-size: 90%;
-  padding: 0px 6px;
-  background: #333333;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
-  -webkit-background-clip: padding-box;
-  -moz-background-clip: padding;
-  background-clip: padding-box;
-}
-.portfolio .project .tag.orange {
-  background: #f16529;
-}
-.portfolio .project .tag.green {
-  background: #83cd29;
-}
-.portfolio .screens {
   position: relative;
-  width: 19em;
-  height: 15em;
 }
-.portfolio .screens .screen1 {
+.portfolio .spinner {
   position: absolute;
-  top: 17%;
-}
-.portfolio .screens .screen1 .preview-circle {
-  width: 11em;
-  height: 11em;
-}
-.portfolio .screens .screen2 {
-  position: absolute;
-  top: 1%;
-  left: 52%;
-}
-.portfolio .screens .screen2 .preview-circle {
-  width: 6em;
-  height: 6em;
-}
-.portfolio .screens .screen3 {
-  position: absolute;
-  top: 41%;
-  left: 60%;
-}
-.portfolio .screens .screen3 .preview-circle {
-  width: 9em;
-  height: 9em;
-}
-.portfolio .screens .preview-circle {
-  box-shadow: 1px 1px 6px rgba(128, 128, 128, 0.5);
+  width: 1em;
+  height: 1em;
   -webkit-border-radius: 100%;
   -moz-border-radius: 100%;
   border-radius: 100%;
   -webkit-background-clip: padding-box;
   -moz-background-clip: padding;
   background-clip: padding-box;
+  top: 35%;
+  font-size: 300%;
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+  cursor: pointer;
 }
-.portfolio .monitor {
-  display: table;
-  margin: auto;
-  margin-bottom: 5em;
-  position: relative;
-  padding: 4%;
-  border: 1px solid #ffffff;
-  background: #000000;
-  z-index: 2;
-  -webkit-border-radius: 12px;
-  -moz-border-radius: 12px;
-  border-radius: 12px;
-  -webkit-background-clip: padding-box;
-  -moz-background-clip: padding;
-  background-clip: padding-box;
+.portfolio .spinner:hover {
+  opacity: 1;
+  filter: alpha(opacity=100);
 }
-@media only screen and (max-width: 670px) {
-  .portfolio .monitor {
-    margin-bottom: 4em;
-  }
-}
-@media only screen and (max-width: 460px) {
-  .portfolio .monitor {
-    height: 3.5em;
-  }
-}
-.portfolio .monitor .screen .preview {
-  max-width: 20em;
-  max-height: 20em;
-  border: 1px solid #ffffff;
-  -webkit-border-radius: 12px;
-  -moz-border-radius: 12px;
-  border-radius: 12px;
-  -webkit-background-clip: padding-box;
-  -moz-background-clip: padding;
-  background-clip: padding-box;
-}
-.portfolio .monitor .screen .preview-full {
-  width: 100%;
-  border: 1px solid #666666;
-  -webkit-border-radius: 12px;
-  -moz-border-radius: 12px;
-  border-radius: 12px;
-  -webkit-background-clip: padding-box;
-  -moz-background-clip: padding;
-  background-clip: padding-box;
-}
-.portfolio .monitor .screen:before {
-  display: block;
-  content: '';
+.portfolio .left-spinner {
+  left: 3%;
   position: absolute;
-  z-index: 2;
-  margin-left: -4%;
-  margin-top: -4%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(30deg, rgba(204, 204, 204, 0) 0%, rgba(204, 204, 204, 0) 55%, rgba(204, 204, 204, 0.2) 56%, rgba(204, 204, 204, 0) 100%);
-}
-.portfolio .monitor:after {
-  display: block;
-  content: '';
-  position: absolute;
-  top: 100%;
-  margin-left: -15%;
-  left: 50%;
-  width: 30%;
-  height: 3em;
-  border: 1px solid #ffffff;
-  border-bottom: none;
-  border-top: none;
-  background: #000000;
-}
-@media only screen and (max-width: 670px) {
-  .portfolio .monitor:after {
-    height: 2em;
-  }
-}
-.portfolio .monitor:before {
-  display: block;
-  content: '';
-  position: absolute;
-  top: 100%;
-  margin-top: 3em;
-  margin-left: -35%;
-  left: 50%;
-  width: 70%;
+  width: 1em;
   height: 1em;
-  border: 1px solid #ffffff;
-  background: #000000;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  border-radius: 100%;
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+  top: 35%;
+  font-size: 300%;
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+  cursor: pointer;
 }
-@media only screen and (max-width: 670px) {
-  .portfolio .monitor:before {
-    margin-top: 2em;
-  }
+.portfolio .left-spinner:hover {
+  opacity: 1;
+  filter: alpha(opacity=100);
 }
-@media only screen and (max-width: 460px) {
-  .portfolio .monitor:before {
-    height: 0.5em;
-  }
+.portfolio .left-spinner .arrow {
+  width: 0.5em;
+  height: 0.5em;
+  margin-left: 0.3333333333333333em;
+  margin-top: 0.25em;
+  border-right: 2px solid #333333;
+  border-top: 2px solid #333333;
+  -webkit-transform: rotate(225deg);
+  -moz-transform: rotate(225deg);
+  -ms-transform: rotate(225deg);
+  -o-transform: rotate(225deg);
+  transform: rotate(225deg);
 }
-.portfolio .monitor.full {
-  width: 90%;
-  padding-bottom: 0;
+.portfolio .right-spinner {
+  position: absolute;
+  width: 1em;
+  height: 1em;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  border-radius: 100%;
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+  top: 35%;
+  font-size: 300%;
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+  cursor: pointer;
+  right: 3%;
 }
-@media only screen and (max-width: 950px) {
-  .portfolio .monitor.full {
-    width: 100%;
-  }
+.portfolio .right-spinner:hover {
+  opacity: 1;
+  filter: alpha(opacity=100);
 }
-.portfolio .monitor.full .screen {
-  margin-bottom: -5px;
-}
-.portfolio .monitor.full .panel {
-  color: #cccccc;
-  height: 2em;
-  line-height: 2em;
-}
-.portfolio .monitor.full .panel span {
-  font-size: 90%;
-}
-.portfolio .monitor.full:after {
-  border-top: 1px solid #ffffff;
-  border-bottom: 1px solid #ffffff;
-}
-.portfolio .monitor.full:before {
-  z-index: 1;
+.portfolio .right-spinner .arrow {
+  width: 0.5em;
+  height: 0.5em;
+  margin-left: 0.16666666666666666em;
+  margin-top: 0.25em;
+  border-right: 2px solid #333333;
+  border-top: 2px solid #333333;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
 }
 .portfolio .monitor-wrapper {
   padding: 2em;
-}
-@media only screen and (max-width: 600px) {
-  .portfolio .monitor-wrapper {
-    padding: 1em;
-  }
 }
 .portfolio .monitor-wrapper .monitor-full {
   width: 90%;
@@ -1116,17 +1003,12 @@ span.red {
   margin: auto;
   position: relative;
 }
-@media only screen and (max-width: 950px) {
-  .portfolio .monitor-wrapper .monitor-full {
-    width: 100%;
-  }
-}
 .portfolio .monitor-wrapper .monitor-full .screen {
   position: absolute;
   top: 8.4%;
-  left: 9.5%;
-  right: 9.7%;
-  bottom: 34.6%;
+  left: 9.4%;
+  right: 9.5%;
+  bottom: 34.5%;
 }
 .portfolio .monitor-wrapper .monitor-full .screen .preview {
   width: 100%;
