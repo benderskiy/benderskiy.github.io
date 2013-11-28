@@ -372,9 +372,6 @@ span.red {
   background: #b70000;
 }
 .section {
-  float: left;
-  width: 100%;
-  display: table;
   padding: 1rem;
   color: #333333;
 }
