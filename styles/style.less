@@ -251,6 +251,7 @@
     -ms-backface-visibility:     @property;
 }
 // STUFF 
+.swiper-container{margin:0 auto;position:relative;overflow:hidden;-webkit-backface-visibility:hidden;-moz-backface-visibility:hidden;-ms-backface-visibility:hidden;-o-backface-visibility:hidden;backface-visibility:hidden;z-index:1}.swiper-wrapper{position:relative;width:100%;-webkit-transition-property:-webkit-transform,left,top;-webkit-transition-duration:0s;-webkit-transform:translate3d(0px,0,0);-webkit-transition-timing-function:ease;-moz-transition-property:-moz-transform,left,top;-moz-transition-duration:0s;-moz-transform:translate3d(0px,0,0);-moz-transition-timing-function:ease;-o-transition-property:-o-transform,left,top;-o-transition-duration:0s;-o-transition-timing-function:ease;-o-transform:translate(0px,0);-ms-transition-property:-ms-transform,left,top;-ms-transition-duration:0s;-ms-transform:translate3d(0px,0,0);-ms-transition-timing-function:ease;transition-property:transform,left,top;transition-duration:0s;transform:translate3d(0px,0,0);transition-timing-function:ease}.swiper-free-mode>.swiper-wrapper{-webkit-transition-timing-function:ease-out;-moz-transition-timing-function:ease-out;-ms-transition-timing-function:ease-out;-o-transition-timing-function:ease-out;transition-timing-function:ease-out;margin:0 auto}.swiper-slide{float:left}.swiper-wp8-horizontal{-ms-touch-action:pan-y}.swiper-wp8-vertical{-ms-touch-action:pan-x}.swiper-container,.swiper-slide{width:100%;height:100%}
 .pull-left {
     float: left;
 }
@@ -283,31 +284,31 @@
 @top-loader-bar-progress-anim-type: ease-in-out;
 @top-loader-bar-progress-anim-length: 500ms; // this.animDelay in js 
 #top-loader-bar {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  height: @top-loader-bar-size;
-  background: @top-loader-bar-base-color;
-  .opacity(0);  
-  &.visible {
-    opacity: @top-loader-bar-opacity;
-    .transition(opacity @top-loader-bar-anim-type @top-loader-bar-anim-length);
-    #top-loader-bar-progress {
-      .transition(width @top-loader-bar-progress-anim-type @top-loader-bar-progress-anim-length);
+    z-index: 99;
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    height: @top-loader-bar-size;
+    background: @top-loader-bar-base-color;
+    .opacity(0);  
+    &.visible {
+        opacity: @top-loader-bar-opacity;
+        .transition(opacity @top-loader-bar-anim-type @top-loader-bar-anim-length);
+        #top-loader-bar-progress {
+            .transition(width @top-loader-bar-progress-anim-type @top-loader-bar-progress-anim-length);
+        }
     }
-  }
-  &.hidden {
-    .opacity(0);
-    .transition(opacity @top-loader-bar-anim-type @top-loader-bar-anim-length);
-  }
-  &.success {
-    background: @top-loader-bar-progress-color;
-  }
-  
-  #top-loader-bar-progress {
-    width: 0%;
-    height: 100%;
-    background: @top-loader-bar-progress-color;
-  }
+    &.hidden {
+        .opacity(0);
+        .transition(opacity @top-loader-bar-anim-type @top-loader-bar-anim-length);
+    }
+    &.success {
+        background: @top-loader-bar-progress-color;
+    }
+    #top-loader-bar-progress {
+        width: 0%;
+        height: 100%;
+        background: @top-loader-bar-progress-color;
+    }
 }
 //ANIMATIONS
 @-moz-keyframes spining {
@@ -799,50 +800,58 @@ span {
     text-align: center;
     position: relative;
 
+    .project-header {
+        color: @red;
+        font-size: 150%;
+    }
 
-    @arrow-size: .5em;
-    @arrow-width: 2px;
-    .spinner {
-        position: absolute;
-        width: 2*@arrow-size;
-        height: 2*@arrow-size;
-        .border-radius(100%);
-        top: 35%;
-        font-size: 300%;
-        .opacity(0.5);
-        cursor: pointer;
-        &:hover {
-            .opacity(1);
-        }
-    }
-    .left-spinner {
-        left: 3%;
-        .spinner();
-        .arrow {
-            width: @arrow-size;
-            height: @arrow-size;
-            margin-left: @arrow-size/1.5;
-            margin-top: @arrow-size/2;
-            border-right: @arrow-width solid @black;
-            border-top: @arrow-width solid @black;
-            .rotate(225deg);
-        }
-    }
-    .right-spinner {
-        .spinner();
-        right: 3%;
-        .arrow {
-            width: @arrow-size;
-            height: @arrow-size;
-            margin-left: @arrow-size/3;
-            margin-top: @arrow-size/2;
-            border-right: @arrow-width solid @black;
-            border-top: @arrow-width solid @black;
-            .rotate(45deg);
-        }
-    }
     .monitor-wrapper {
+        .user-select(none);
         padding: 2em;
+        position: relative;
+
+        @arrow-size: .5em;
+        @arrow-width: 2px;
+        .spinner {
+            position: absolute;
+            width: 2*@arrow-size;
+            height: 2*@arrow-size;
+            .border-radius(100%);
+            top: 35%;
+            font-size: 300%;
+            .opacity(0.5);
+            cursor: pointer;
+            &:hover {
+                .opacity(1);
+            }
+        }
+       .left-spinner {
+            left: 3%;
+            .spinner();
+            .arrow {
+                width: @arrow-size;
+                height: @arrow-size;
+                margin-left: @arrow-size/1.5;
+                margin-top: @arrow-size/2;
+                border-right: @arrow-width solid @black;
+                border-top: @arrow-width solid @black;
+                .rotate(225deg);
+            }
+        }
+        .right-spinner {
+            .spinner();
+            right: 3%;
+            .arrow {
+                width: @arrow-size;
+                height: @arrow-size;
+                margin-left: @arrow-size/3;
+                margin-top: @arrow-size/2;
+                border-right: @arrow-width solid @black;
+                border-top: @arrow-width solid @black;
+                .rotate(45deg);
+            }
+        }        
+
         .monitor-full {
             width: 90%;
             display: table;
@@ -855,11 +864,6 @@ span {
                 left: 9.4%;
                 right: 9.5%;
                 bottom: 34.5%;
-
-                .preview {
-                    width: 100%;
-                    height: 100%;
-                }
             }
 
             .monitor-png {
