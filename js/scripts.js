@@ -10,12 +10,18 @@ $.ready(function () {
 	lBar.set(10+30*Math.random());
 });
 
-var mySwiper
+var mySwiper;
+var $projectName = $('.project-name');
 window.onload = function() {
 	lBar.set(100);
 	mySwiper = new Swiper('.swiper-container',{
 	    mode:'horizontal',
-	    loop: true
+	    loop: true,
+	    onSlideChangeEnd: function() {
+			$projectName.set('$', '+hidden');
+			var projectName = $('.swiper-slide-active').get('%project');
+			$('.project-'+projectName).set('$', '-hidden');
+		}
 	 });  
 };
 

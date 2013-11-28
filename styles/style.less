@@ -804,6 +804,21 @@ span {
     .project-header {
         color: @red;
         font-size: 150%;
+        sup {
+            color: @black;
+            font-size: 70%;
+        }
+        @media only screen and (max-width : 600px) {
+            font-size: 100%;
+        }  
+        @media only screen and (max-width : 400px) {
+            font-size: 80%;
+        }  
+        .project-name {
+            &.hidden {
+                display: none;
+            }
+        }
     }
 
     .monitor-wrapper {

@@ -965,6 +965,23 @@ span.red {
   color: #b70000;
   font-size: 150%;
 }
+.portfolio .project-header sup {
+  color: #333333;
+  font-size: 70%;
+}
+@media only screen and (max-width: 600px) {
+  .portfolio .project-header {
+    font-size: 100%;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .portfolio .project-header {
+    font-size: 80%;
+  }
+}
+.portfolio .project-header .project-name.hidden {
+  display: none;
+}
 .portfolio .monitor-wrapper {
   -webkit-user-select: none;
   -moz-user-select: none;
