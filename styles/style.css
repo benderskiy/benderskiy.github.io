@@ -965,9 +965,13 @@ span.red {
   color: #b70000;
   font-size: 150%;
 }
-.portfolio .project-header sup {
+.portfolio .project-header a {
+  color: #b70000;
+}
+.portfolio .project-header .project-descr {
   color: #333333;
   font-size: 70%;
+  margin-bottom: -0.5em;
 }
 @media only screen and (max-width: 600px) {
   .portfolio .project-header {
@@ -1000,7 +1004,7 @@ span.red {
   -webkit-background-clip: padding-box;
   -moz-background-clip: padding;
   background-clip: padding-box;
-  top: 35%;
+  top: 40%;
   font-size: 300%;
   opacity: 0.5;
   filter: alpha(opacity=50);
@@ -1021,7 +1025,7 @@ span.red {
   -webkit-background-clip: padding-box;
   -moz-background-clip: padding;
   background-clip: padding-box;
-  top: 35%;
+  top: 40%;
   font-size: 300%;
   opacity: 0.5;
   filter: alpha(opacity=50);
@@ -1054,7 +1058,7 @@ span.red {
   -webkit-background-clip: padding-box;
   -moz-background-clip: padding;
   background-clip: padding-box;
-  top: 35%;
+  top: 40%;
   font-size: 300%;
   opacity: 0.5;
   filter: alpha(opacity=50);

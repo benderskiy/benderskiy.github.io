@@ -17,6 +17,7 @@ window.onload = function() {
 	mySwiper = new Swiper('.swiper-container',{
 	    mode:'horizontal',
 	    loop: true,
+	    onlyExternal: true,
 	    onSlideChangeEnd: function() {
 			$projectName.set('$', '+hidden');
 			var projectName = $('.swiper-slide-active').get('%project');

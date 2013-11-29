@@ -803,10 +803,14 @@ span {
 
     .project-header {
         color: @red;
+        a {
+            color: @red;
+        }
         font-size: 150%;
-        sup {
+        .project-descr {
             color: @black;
             font-size: 70%;
+            margin-bottom: -0.5em;
         }
         @media only screen and (max-width : 600px) {
             font-size: 100%;
@@ -833,7 +837,7 @@ span {
             width: 2*@arrow-size;
             height: 2*@arrow-size;
             .border-radius(100%);
-            top: 35%;
+            top: 40%;
             font-size: 300%;
             .opacity(0.5);
             cursor: pointer;
